@@ -1,4 +1,4 @@
-// That's info only mine, sorry'
+// That's info only my hint'
 ////////////////////////////////////////////////////////////////////////////////////// MIGRATIONS
 // set npm install --save-dev sequelize-cli
 // create  .sequelizerc file
