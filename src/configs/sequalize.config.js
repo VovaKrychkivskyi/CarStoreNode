@@ -1,11 +1,11 @@
 const Sequelize = require(`sequelize`);
 
+const {DB_NAME, DB_USER, DB_PASS, HOST, DIALECT} = require(`./const.config`)
+
 module.exports = new Sequelize(
-  `car_store`,
-  `root`,
-  `qw1234qw`,
+  DB_NAME, DB_USER, DB_PASS,
   {
-    host: `127.0.0.1`,
-    dialect: `mysql`
+    host: HOST,
+    dialect: DIALECT
   }
 )

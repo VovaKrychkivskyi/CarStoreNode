@@ -6,7 +6,7 @@ const server = http.createServer(app)
 
 sequelize.sync()
   .then(() => {
-    server.listen(9999, () => {
-      console.log(`Server started on port 9999 `)
+    server.listen(4001, () => {
+      console.log(`Server started on port 4001`)
     })
   })

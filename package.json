@@ -16,13 +16,13 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
     "fs": "0.0.1-security",
+    "fs-extra": "^9.0.1",
     "joi": "^17.2.1",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.1.0",
+    "mysql2": "^2.2.5",
     "nodemailer": "^6.4.11",
     "sequelize": "^6.3.5",
-    "uuid": "^8.3.0",
-    "fs-extra": "^9.0.1"
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@types/joi": "^14.3.4",
