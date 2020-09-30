@@ -1,6 +1,7 @@
 'use strict';
 
 const {DataTypes} = require(`sequelize`)
+const {TABLE_NAME_USER} = require(`../../configs/const.config`)
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -11,7 +12,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
 
-    await queryInterface.createTable(`users_table`, {
+    await queryInterface.createTable(TABLE_NAME_USER, {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -39,6 +40,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable(`users_table`)
+    await queryInterface.dropTable(TABLE_NAME_USER)
   }
 }

@@ -1,9 +1,11 @@
+const {DB_NAME, DB_USER, DB_PASS, HOST, DIALECT} = require(`./const.config`)
+
 module.exports={
   "development": {
-    "username": "root",
-    "password": "qw1234qw",
-    "database": "car_store",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": DB_USER,
+    "password": DB_PASS,
+    "database": DB_NAME,
+    "host": HOST,
+    "dialect": DIALECT
   }
 }
