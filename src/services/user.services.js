@@ -2,11 +2,12 @@ const UserModel = require(`../database/models/user.model`)
 
 module.exports = {
   createUserService: async (user) => {
+    console.log(33);
     return await UserModel.create(user)
   },
 
   checkUserService:async (user)=>{
-    return await UserModel.findOne(user)
+    return await UserModel.findOne({where:user})
   },
 
   updateUserService: async (name, email) =>{
