@@ -11,5 +11,9 @@ module.exports = {
 
   updateUserService: async (name, email) =>{
     return await UserModel.update({name}, {where: {email}})
+  },
+
+  deleteUserService: async (email) =>{
+    return await UserModel.destroy({where: {email}})
   }
 }

@@ -2,7 +2,8 @@ const {
   userService: {
     checkUserService,
     createUserService,
-    updateUserService
+    updateUserService,
+    deleteUserService
   }
 } = require(`../services`)
 
@@ -19,6 +20,11 @@ module.exports = {
 
   updateUser: async (req, res)=>{
     const user = await updateUserService(req.body.name, req.body.email)
+    res.json(user)
+  },
+
+  deleteUser: async (req, res)=>{
+    const user = await deleteUserService(req.body.email)
     res.json(user)
   }
 }

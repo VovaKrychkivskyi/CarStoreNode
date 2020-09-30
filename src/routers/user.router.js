@@ -4,7 +4,8 @@ const {
   usersControllers: {
     createUser,
     readUser,
-    updateUser
+    updateUser,
+    deleteUser
   }
 } = require(`../controllers`)
 
@@ -13,5 +14,6 @@ const userRouter = Router();
 userRouter.get(`/`, readUser);
 userRouter.post(`/`, createUser);
 userRouter.patch(`/`, updateUser);
+userRouter.delete(`/`, deleteUser);
 
 module.exports = userRouter;
