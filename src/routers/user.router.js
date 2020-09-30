@@ -7,13 +7,20 @@ const {
     updateUser,
     deleteUser
   }
-} = require(`../controllers`)
+} = require(`../controllers`);
+
+const {
+  userMiddlewares: {
+    existUserDBFalse,
+    existUserDBTrue
+  }
+} = require(`../middlewares`);
 
 const userRouter = Router();
 
-userRouter.get(`/`, readUser);
-userRouter.post(`/`, createUser);
-userRouter.patch(`/`, updateUser);
-userRouter.delete(`/`, deleteUser);
+userRouter.get(`/`, existUserDBTrue, readUser);
+userRouter.post(`/`, existUserDBFalse, createUser);
+userRouter.patch(`/`, existUserDBTrue, updateUser);
+userRouter.delete(`/`, existUserDBTrue, deleteUser);
 
 module.exports = userRouter;
