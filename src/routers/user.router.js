@@ -12,15 +12,16 @@ const {
 const {
   userMiddlewares: {
     existUserDBFalse,
-    existUserDBTrue
+    existUserDBTrue,
+    joiValidUser
   }
 } = require(`../middlewares`);
 
 const userRouter = Router();
 
 userRouter.get(`/`, existUserDBTrue, readUser);
-userRouter.post(`/`, existUserDBFalse, createUser);
-userRouter.patch(`/`, existUserDBTrue, updateUser);
+userRouter.post(`/`, existUserDBFalse, joiValidUser, createUser);
+userRouter.patch(`/`, existUserDBTrue, joiValidUser, updateUser);
 userRouter.delete(`/`, existUserDBTrue, deleteUser);
 
 module.exports = userRouter;

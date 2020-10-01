@@ -19,3 +19,15 @@
 // crete .env file => write example: DB_USER=root
 // crete const.config file => write example: module.exports={DB_NAME: process.env.DB_NAME}
 //////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////// JOI
+// open utils => set const joi = require(`joi`)
+// write => module.exports = joi.object()
+// .keys({all fields (example=>name: joi.string().trim().regex(EMAIL).max(50).required())})
+// create new middleware =>
+// const {joiValid} = require('../../utils')
+// const {error} = joiValid.validate(req.body);
+// if (error) {
+//       return
+// set new middleware in router
+//////////////////////////////////////////////////////////////////////////////////////

@@ -8,6 +8,7 @@ module.exports={
 
   AUTHORIZATION: process.env.AUTHORIZATION,
 
+
   TABLE_NAME_OAUTH: process.env.TABLE_NAME_OAUTH,
   TABLE_NAME_USER: process.env.TABLE_NAME_USER,
   TABLE_NAME_CAR: process.env.TABLE_NAME_CAR,
@@ -17,4 +18,6 @@ module.exports={
 
   PHOTO_MIMETYPES:process.env.PHOTO_MIMETYPES,
   DOCS_MIMETYPES:process.env.DOCS_MIMETYPES,
+
+  EMAIL: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 }

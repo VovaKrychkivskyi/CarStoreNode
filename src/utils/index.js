@@ -1,0 +1,1 @@
+module.exports.joiValid=require(`./joi-valid.middleware`)
