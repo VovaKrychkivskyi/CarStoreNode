@@ -1,9 +1,11 @@
 const express = require(`express`);
+const env = require(`dotenv`);
 const app = express();
 
 const {mainRouter} = require(`./routers`)
 
 app.use(express.json());
+env.config();
 
 app.use(`/`, mainRouter)
 

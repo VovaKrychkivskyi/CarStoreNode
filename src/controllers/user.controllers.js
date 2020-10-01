@@ -14,6 +14,7 @@ module.exports = {
     try {
       req.body.password = await hashedPass(req.body.password);
       const user = await createUserService(req.body)
+
       res.json(user)
 
     } catch (e) {
@@ -23,8 +24,8 @@ module.exports = {
 
   readUser: async (req, res, next) => {
     try {
-      const user = await checkUserService(req.body)
-      res.json(user)
+
+      res.json(req.user)
 
     } catch (e) {
       next(e)

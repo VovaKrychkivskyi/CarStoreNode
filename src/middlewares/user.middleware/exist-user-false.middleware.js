@@ -3,9 +3,8 @@ const {ErrorHandler, errors, statusCodes} = require(`../../errors`)
 
 module.exports = async (req, res, next) => {
   try {
-
-    const user = await checkUserService(req.body)
-
+    const {email} = req.body
+    const user = await checkUserService(email)
     if (user) {
       return next(new ErrorHandler(
         statusCodes.BAD_REQUEST,
@@ -13,7 +12,6 @@ module.exports = async (req, res, next) => {
         errors.BAD_REQUEST_EMAIL_EXISTS.code,
       ))
     }
-
     next()
 
   } catch (e) {
