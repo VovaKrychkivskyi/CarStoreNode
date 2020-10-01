@@ -5,11 +5,14 @@ const {
     updateUserService,
     deleteUserService
   }
-} = require(`../services`)
+} = require(`../services`);
+
+const {hashedPass} = require(`../utils`)
 
 module.exports = {
   createUser: async (req, res, next) => {
     try {
+      req.body.password = await hashedPass(req.body.password);
       const user = await createUserService(req.body)
       res.json(user)
 
