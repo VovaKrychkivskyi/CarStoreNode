@@ -4,6 +4,9 @@ const {
     createUserService,
     updateUserService,
     deleteUserService
+  },
+  emailService:{
+    sendMail
   }
 } = require(`../services`);
 
@@ -14,6 +17,8 @@ module.exports = {
     try {
       req.body.password = await hashedPass(req.body.password);
       const user = await createUserService(req.body)
+
+      await sendMail(user.email, CREATE_USER, {userName: user.name})
 
       res.json(user)
 
